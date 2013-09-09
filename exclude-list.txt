@@ -8,4 +8,5 @@ site/cgi-bin
 *~
 */*~
 **/*~
+site/properties.php
 site/properties.php.template
