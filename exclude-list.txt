@@ -1,0 +1,11 @@
+site/error_log
+site/cgi-bin
+.git
+*/.git
+*/.git*
+**/.git
+**/.git*
+*~
+*/*~
+**/*~
+site/properties.php.template

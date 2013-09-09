@@ -1,0 +1,37 @@
+<?php
+class Properties {
+
+       // Change these to your values
+       var $db_name = 'dbname';
+       var $db_user = 'user';
+       var $db_pass = 'pass';
+
+       var $db_host = 'host';
+       var $db_port = 3306;
+
+       var $siteUrl = "http://localhost/";
+
+	public function dbg() {
+		echo $this->db_host."<br/>";
+		echo $this->db_port."<br/>";
+		echo $this->db_name."<br/>";
+		echo $this->db_user."<br/>";
+		echo $this->db_pass."<br/>";
+	}
+
+	private static $instance;
+    public static function getInstance() 
+    {
+        if (!isset(self::$instance)) {
+            $c = __CLASS__;
+            self::$instance = new $c;
+        }
+
+        return self::$instance;
+    }
+	
+	
+}
+
+
+?>
