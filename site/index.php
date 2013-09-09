@@ -12,7 +12,7 @@ $siteUrl = Properties::getInstance()->siteUrl;
 			<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
 			<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.7/jquery-ui.min.js"></script>
 			<script type="text/javascript">
-				var baseUrl = '<?php echo($siteUrl); ?>/mysql_test.php';
+				var baseUrl = '<?php echo($siteUrl); ?>/autocomplete.php';
 				var nutUrl = '<?php echo($siteUrl); ?>/nut.php';
 			    if (!window.console) {
 			        window.console = {
