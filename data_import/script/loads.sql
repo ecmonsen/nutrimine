@@ -1,0 +1,13 @@
+load data local infile 'DATADIR/DERIV_CD.txt' into table DataDerivationCode  fields terminated by '\t';
+load data local infile 'DATADIR/FOOD_DES.txt' into table FoodDescription  fields terminated by '\t' optionally enclosed by '~';
+load data local infile 'DATADIR/FD_GROUP.txt' into table FoodGroup  fields terminated by '\t' optionally enclosed by '~';
+load data local infile 'DATADIR/FOOTNOTE.txt' into table Footnote  fields terminated by '\t' optionally enclosed by '~';
+load data local infile 'DATADIR/LANGUAL.txt' into table LanguaLFactor  fields terminated by '\t' optionally enclosed by '~';
+load data local infile 'DATADIR/LANGDESC.txt' into table LanguaLFactorsDescription  fields terminated by '\t' optionally enclosed by '~';
+load data local infile 'DATADIR/NUT_DATA.txt' into table NutrientData  fields terminated by '\t' optionally enclosed by '~';
+load data local infile 'DATADIR/NUTR_DEF.txt' into table NutrientDefinition  fields terminated by '\t' optionally enclosed by '~';
+load data local infile 'DATADIR/SRC_CD.txt' into table SourceCode  fields terminated by '\t' optionally enclosed by '~';
+load data local infile 'DATADIR/DATA_SRC.txt' into table SourcesofDataData  fields terminated by '\t' optionally enclosed by '~';
+load data local infile 'DATADIR/DERIV_CD.txt' into table DataDerivationCode  fields terminated by '\t' optionally enclosed by '~';
+load data local infile 'DATADIR/DATSRCLN.txt' into table SourcesofDataLink  fields terminated by '\t' optionally enclosed by '~';
+load data local infile 'DATADIR/WEIGHT.txt' into table Weight  fields terminated by '\t' optionally enclosed by '~';

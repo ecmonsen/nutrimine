@@ -10,13 +10,21 @@ class NutrientData {
     $this->props = Properties::getInstance();
   }
 
-  public function showNutrientData($str) {
+  private function connect() {
     if (!isset($this->mysqli)) {
       $this->mysqli = new mysqli(
                       $this->props->db_host, $this->props->db_user, $this->props->db_pass, $this->props->db_name, $this->props->db_port)
               or die('Could not connect: ' . mysqli_connect_error());
     }
-    $query = 'select ndef.NutrDesc, ndef.Units, nd.Nutr_Val_Edible from FoodDescription fd join view_nutrients nd on fd.NDB_No=nd.NDB_No join NutrientDefinition ndef on nd.Nutr_No=ndef.Nutr_No where fd.Long_Desc=?  order by SR_Order';
+  }
+
+  public function showNutrientData($str, $weight_seq = 1) {
+    $this->connect();
+
+    $query = "select NutrDesc, Units, Nutr_Val_Edible "
+    . "from view_nutrients where Long_Desc=? "
+    . "order by SR_Order;";
+
     if ($stmt = $this->mysqli->prepare($query)) {
       $stmt->bind_param("s", $str); // TODO remove % from str
       if ($stmt->execute()) {
@@ -43,6 +51,10 @@ class NutrientData {
       header('HTTP/1.1 500 Internal Server Error');
       echo("Problem with prepare: " . $this->mysqli->error);
     }
+  }
+
+  public function showNutrientDataByWeight() {
+    
   }
 
   public function __destruct() {
